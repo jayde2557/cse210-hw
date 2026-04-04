@@ -14,7 +14,7 @@ public class BreathingActivity : Activity
         Console.WriteLine("");
 
         DateTime startTime = DateTime.Now;
-        DateTime futureTime = startTime.AddSeconds(length());
+        DateTime futureTime = startTime.AddSeconds(GetLength());
 
         while (DateTime.Now < futureTime)
         {

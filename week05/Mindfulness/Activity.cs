@@ -22,7 +22,7 @@ public class Activity
         _duration = int.Parse(duration);
     }
 
-    public int length()
+    public int GetLength()
     {
         return _duration;
     }

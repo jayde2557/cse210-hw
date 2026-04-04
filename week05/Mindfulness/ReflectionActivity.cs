@@ -49,7 +49,7 @@ public class ReflectionActivity : Activity
         List<string> remainingQuestions = new List<string>(_questions);
 
         DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(length());
+        DateTime endTime = startTime.AddSeconds(GetLength());
 
         while (DateTime.Now < endTime && remainingQuestions.Count > 0)
         {

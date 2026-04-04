@@ -8,6 +8,8 @@ public class ListingActivity : Activity
         "Who are people that you have helped this week?",
         "When have you felt the Holy Ghost this month?",
         "Who are some of your personal heroes?"];
+
+    private int _count;
     public ListingActivity(string name, string description, int duration) :base(name, description, duration)
     {
         
@@ -30,16 +32,17 @@ public class ListingActivity : Activity
         ShowCountDown(5);
         Console.WriteLine("");
         
-        DateTime endTime = DateTime.Now.AddSeconds(length());
+        DateTime endTime = DateTime.Now.AddSeconds(GetLength());
         List<string> userResponses = new List<string>();
         while (DateTime.Now < endTime)
         {
             Console.Write("> ");
             string response = Console.ReadLine();
             userResponses.Add(response);
+            _count = userResponses.Count;
         }
 
-        Console.WriteLine($"\nYou listed {userResponses.Count} items!");
+        Console.WriteLine($"\nYou listed {_count} items!");
     }
 
 }
