@@ -102,7 +102,15 @@ public class GoalManager
         int count = 1;
         foreach (Goal g in _goals)
         {
-            string status = g.IsComplete() ? "[X]" : "[ ]";
+            string status;
+            if (g.IsComplete())
+            {
+                status = "[X]";
+            }
+            else
+            {
+                status = "[ ]";
+            }
             Console.WriteLine($"{count}. {status} {g.GetDetailsString()}");
             count++;
         }
@@ -175,7 +183,6 @@ public class GoalManager
                     int.Parse(parts[5]), int.Parse(parts[6])
                 );
 
-                // restore progress
                 var field = cg.GetType()
                               .GetField("_amountCompleted", 
                               System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
