@@ -24,15 +24,33 @@ public class GoalManager
             Console.Write("Choose: ");
             string choice = Console.ReadLine();
 
-            switch (choice)
+            if (choice == "1")
             {
-                case "1": CreateGoal(); break;
-                case "2": ListGoalDetails(); break;
-                case "3": SaveGoals(); break;
-                case "4": LoadGoals(); break;
-                case "5": RecordEvent(); break;
-                case "6": return;
-                default: Console.WriteLine("Invalid choice."); break;
+                CreateGoal();
+            }
+            else if (choice == "2")
+            {
+                ListGoalDetails();
+            }
+            else if (choice == "3")
+            {
+                SaveGoals();
+            }
+            else if (choice == "4")
+            {
+                LoadGoals();
+            }
+            else if (choice == "5")
+            {
+                RecordEvent();
+            }
+            else if (choice == "6")
+            {
+                return;
+            }
+            else
+            {
+                Console.WriteLine("Invalid choice.");
             }
         }
     }
@@ -48,13 +66,13 @@ public class GoalManager
         Console.Write("Which type? ");
         string type = Console.ReadLine();
 
-        Console.Write("Name: ");
+        Console.Write("Whst is the name of your goal? ");
         string name = Console.ReadLine();
 
-        Console.Write("Description: ");
+        Console.Write("Write a short description of it: ");
         string description = Console.ReadLine();
 
-        Console.Write("Points: ");
+        Console.Write("How many points for this goal? ");
         int points = int.Parse(Console.ReadLine());
 
         if (type == "1")
