@@ -38,4 +38,9 @@ public class ChecklistGoal : Goal
     {
         return $"ChecklistGoal|{_shortName}|{_description}|{_points}|{_amountCompleted}|{_target}|{_bonus}";
     }
+
+    public void SetProgress(int value)
+    {  
+    _amountCompleted = value;
+    }
 }

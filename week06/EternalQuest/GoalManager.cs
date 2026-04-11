@@ -183,12 +183,7 @@ public class GoalManager
                     int.Parse(parts[5]), int.Parse(parts[6])
                 );
 
-                var field = cg.GetType()
-                              .GetField("_amountCompleted", 
-                              System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-
-                field.SetValue(cg, int.Parse(parts[4]));
-
+                cg.SetProgress(int.Parse(parts[4]));
                 _goals.Add(cg);
             }
         }
