@@ -1,3 +1,5 @@
+
+//creativity - I added a leveling system where every 1000 points adds a level.
 using System;
 
 class Program

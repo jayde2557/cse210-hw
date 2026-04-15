@@ -11,7 +11,7 @@ public class GoalManager
     {
         while (true)
         {
-            Console.WriteLine($"\nYou have {_score} points.\n");
+            Console.WriteLine($"\nYou have {_score} points. | Level: {GetLevel()}\n");
 
             Console.WriteLine("Menu Options:");
             Console.WriteLine("1. Create New Goal");
@@ -131,7 +131,18 @@ public class GoalManager
         int gained = _goals[index].RecordEvent();
         _score += gained;
 
+        int oldLevel = GetLevel();
+
+        _score += gained;
+
+        int newLevel = GetLevel();
+
         Console.WriteLine($"You earned {gained} points!");
+
+        if (newLevel > oldLevel)
+        {
+            Console.WriteLine($"LEVEL UP! You reached Level {newLevel}! 🎉");
+        }
     }
 
     public void SaveGoals()
@@ -150,6 +161,11 @@ public class GoalManager
         }
 
         Console.WriteLine("Saved!");
+    }
+
+    public int GetLevel()
+    {
+        return _score / 1000;
     }
 
     public void LoadGoals()

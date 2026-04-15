@@ -22,8 +22,7 @@ public class Activity
 
     public virtual string GetSummary()
     {
-        return $"{_date} {GetType().Name} ({_lengthMinutes} min) - " +
-               $"Distance {GetDistance():0.0}, Speed {GetSpeed():0.0}, Pace {GetPace():0.0}";
+        return $"{_date} {GetType().Name} ({_lengthMinutes} min) - " + $"Distance {GetDistance():0.0}, Speed {GetSpeed():0.0}, Pace {GetPace():0.0}";
     }
 
     protected int GetLength()
