@@ -1,0 +1,2 @@
+400
+SimpleGoal|Finish my work|Math Assignment|200|True

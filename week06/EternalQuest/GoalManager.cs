@@ -141,7 +141,7 @@ public class GoalManager
 
         if (newLevel > oldLevel)
         {
-            Console.WriteLine($"LEVEL UP! You reached Level {newLevel}! 🎉");
+            Console.WriteLine($"LEVEL UP! You reached Level {newLevel}!");
         }
     }
 
@@ -185,8 +185,9 @@ public class GoalManager
 
             if (type == "SimpleGoal")
             {
-                _goals.Add(new SimpleGoal(parts[1], parts[2], int.Parse(parts[3])) {
-                });
+                SimpleGoal sg = new SimpleGoal(parts[1], parts[2], int.Parse(parts[3]));
+                sg.SetComplete(bool.Parse(parts[4]));
+                _goals.Add(sg);
             }
             else if (type == "EternalGoal")
             {
